@@ -1,0 +1,25 @@
+<div class='main'>
+    <app-search (findProduct)="changeSearch($event)"></app-search>
+    <div *ngIf="newText === ''">
+        <app-slider></app-slider>
+        <app-catalog></app-catalog>
+    </div>
+    <div *ngIf="newText !== ''" class="container">
+        <div *ngIf="pageCount>1" class="main__buttons">
+            <div [ngClass]="{'main__btn--disabled': page === 1}" (click)="ProductLeft()"
+                class='main__btn main__btn--left'>
+            </div>
+            <div [ngClass]="{'main__btn--disabled': this.page === this.pageCount}" (click)="ProductRight()"
+                class='main__btn main__btn--right'></div>
+        </div>
+        <div class='main__search'>
+            <app-search-catalog-item *ngFor="let catalog of catalogsNewSlider"
+                [catalog]="catalog"></app-search-catalog-item>
+        </div>
+    </div>
+    <div class="main__add-new-product" (click)="onAddProduct()">+</div>
+    <div class="main__add-new-product-bg" (click)="closePopup()"></div>
+    <div class="main__add-new-product-popup">
+        <app-create-catalog></app-create-catalog>
+    </div>
+</div>

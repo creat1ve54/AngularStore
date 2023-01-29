@@ -1,0 +1,46 @@
+<form class="create-catalog" [formGroup]="form" (ngSubmit)="submit()">
+    <h1 class="create-catalog__title">Создание товара</h1>
+    <ul class="create-catalog__list">
+        <li class="create-catalog__item">
+            <label>Размер:</label>
+            <input [ngClass]="{'create-catalog__input--error': size.errors && size.touched}" type="text" formControlName="size">
+            <span class="create-catalog__error" *ngIf="size.errors && size.touched">
+                Поле не должно быть пустым
+            </span>
+        </li>
+        <li class="create-catalog__item">
+            <label>Название товара:</label>
+            <input [ngClass]="{'create-catalog__input--error': name.errors && name.touched}" type="text" formControlName="name">
+            <span class="create-catalog__error" *ngIf="name.errors && name.touched">
+                Поле не должно быть пустым
+            </span>
+        </li>
+        <li class="create-catalog__item">
+            <label>Цена:</label>
+            <input [ngClass]="{'create-catalog__input--error': price.errors && price.touched}" type="text" formControlName="price">
+            <span class="create-catalog__error" *ngIf="price.errors && price.touched">
+                Поле не должно быть пустым
+            </span>
+        </li>
+        <li class="create-catalog__item">
+            <label>Старая цена(не обязательно):</label>
+            <input type="text" formControlName="salePrice">
+        </li>
+        <li class="create-catalog__item">
+            <label>Описание товара:</label>
+            <input [ngClass]="{'create-catalog__input--error': description.errors && description.touched}" type="text" formControlName="description">
+            <span class="create-catalog__error" *ngIf="description.errors && description.touched">
+                Поле не должно быть пустым
+            </span>
+        </li>
+        <li class="create-catalog__item">
+            <label>Фото:</label>
+            <input type="file" (change)="handleUpload($event)" formControlName="url">
+            <span class="create-catalog__error" *ngIf="url.errors && url.touched">
+                Выберите фото
+            </span>
+        </li>
+    </ul>
+    <button [disabled]="this.form.invalid" [ngClass]="{'create-catalog__btn--disabled': this.form.invalid}" type="submit"
+        class="create-catalog__btn btn">Создать</button>
+</form>

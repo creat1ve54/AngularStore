@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'PT Root UI', sans-serif;
+    font-weight: 400;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1110px;
+}
+
+
+.btn {
+    color: #FFFFFF;
+    background: #7984C0;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+
+.body {
+    &__close {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,11 @@
+<div class='search'>
+    <img class='search__img' [src]="'assets/images/product/' + catalog.url" alt={{catalog.name}} />
+    <div class='search__case'>
+        <div class='search__title'>{{catalog.name}}</div>
+        <div *ngIf="catalog.salePrice" class='search__sale-price'>{{catalog.salePrice}}</div>
+        <div class='search__price'>{{catalog.price}}</div>
+    </div>
+    <hr class='search__line' />
+    <div class='search__descr'>{{catalog.description}}</div>
+    <div class='search__size'>{{catalog.size}}</div>
+</div>

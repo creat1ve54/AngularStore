@@ -1,0 +1,11 @@
+<div class='product'>
+    <img class='product__img' [src]="'assets/images/product/' + catalog.url" alt={{catalog.name}} />
+    <div class='product__case'>
+        <div class='product__title'>{{catalog.name}}</div>
+        <div *ngIf="catalog.salePrice" class='product__sale-price'>{{catalog.salePrice}} ₽</div>
+        <div class='product__price'>{{catalog.price}} ₽</div>
+    </div>
+    <hr class='product__line' />
+    <div class='product__descr'>{{catalog.description}}</div>
+    <div class='product__size'>{{catalog.size}}</div>
+</div>

@@ -1,0 +1,24 @@
+<div class='catalog'>
+    <div class='container'>
+        <div class='catalog__menu'>
+            <div class='catalog__left'>
+                <h4 class='catalog__caption'>Недавние поступления</h4>
+                <h2 class='catalog__title'>Новые товары</h2>
+            </div>
+            <div class='catalog__right'>
+                <h4 class='catalog__caption catalog__caption--sort'>Сортировать:</h4>
+                <ul class='catalog__list'>
+                    <li (click)="Option($event.target)" class='catalog__item catalog__item--one'>
+                        {{option1}}
+                        <img src="assets/images/vector.svg" alt="vector" class='catalog__vector' />
+                    </li>
+                    <li (click)="Option($event.target)" class='catalog__item'>{{option2}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class='catalog__product'>
+            <app-catalog-item *ngFor="let catalog of catalogService.newCatalogs" [catalog]="catalog"></app-catalog-item>
+        </div>
+        <div *ngIf="catalogService.catalogs.length > catalogService.limitCatalog && (catalogService.catalogs.length / catalogService.lastIndex > 1)" (click)="ProductAdd()" class='catalog__btn btn'>Показать еще</div>
+    </div>
+</div>

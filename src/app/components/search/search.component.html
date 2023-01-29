@@ -1,0 +1,20 @@
+<div class='search'>
+    <div class='container'>
+        <div class='search__container'>
+            <img src='assets/images/search.svg' alt="Search" class='search__img' />
+            <div class='search__input search__input--invisible'>
+                <input (blur)="onBlurInput()" (focus)="onFocusInput()" (input)="catalogsSearch()" type="text" [(ngModel)] = "text"/>
+                <img (click)="onClear()" src='assets/images/close.svg' alt="Close"
+                    class='search__close search__close--invisible' />
+            </div>
+            <div class='search__animation'>
+                <div class='search__wrapper'>
+                    <label class='search__label'>Поиск товара, бренда или продавца...</label>
+                    <label class='search__label'>Поиск товара, бренда или продавца...</label>
+                    <label class='search__label'>Поиск товара, бренда или продавца...</label>
+                    <label class='search__label'>Поиск товара, бренда или продавца...</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
